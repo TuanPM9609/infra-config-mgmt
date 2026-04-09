@@ -29,7 +29,7 @@ pipeline {
                     $class: "GitSCM",
                     branches: [[name: "*/main"]],
                     userRemoteConfigs: [[
-                        url: "https://github.com/TuanPM9609/db-cm.git",
+                        url: "https://github.com/TuanPM9609/infra-config-mgmt.git",
                         credentialsId: "gitlab-jenkins-token"
                     ]],
                     extensions: [
