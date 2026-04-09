@@ -1,0 +1,35 @@
+metadata:
+  system: erp
+  db_type: oracle
+  version: "19c"
+  updated_at: "2024-01-15"
+  updated_by: "dba-team"
+
+parameters:
+  sga_target:
+    prod_value: "4G"
+    sync_rule: scale_down
+    ratios: { dev: 0.25, test: 0.50 }      # dev=1G, test=2G
+
+  pga_aggregate_target:
+    prod_value: "2G"
+    sync_rule: scale_down
+    ratios: { dev: 0.25, test: 0.50 }
+
+  open_cursors:
+    prod_value: 300
+    sync_rule: copy                         # dev=300, test=300
+
+  processes:
+    prod_value: 1000
+    sync_rule: fixed
+    fixed_values: { dev: 200, test: 400 }
+
+  db_unique_name:
+    prod_value: "ERPPRD"
+    sync_rule: skip                         # không bao giờ sync
+
+  log_archive_dest_1:
+    prod_value: "LOCATION=/arch/erp"
+    sync_rule: skip                         # path khác nhau mỗi env
+

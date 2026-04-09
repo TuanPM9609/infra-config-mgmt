@@ -1,0 +1,49 @@
+# version_matrix/oracle/19c.yaml
+db_type: oracle
+version: "19c"
+supported_params:
+  # Memory
+  - name: sga_target
+    dynamic: true
+    requires_restart: false
+  - name: pga_aggregate_target
+    dynamic: true
+    requires_restart: false
+  - name: memory_target
+    dynamic: true
+    requires_restart: false
+  - name: inmemory_size          # 19c+ only
+    dynamic: false
+    requires_restart: true
+  # Cursors & Sessions
+  - name: open_cursors
+    dynamic: true
+    requires_restart: false
+  - name: sessions
+    dynamic: false
+    requires_restart: true
+  - name: processes
+    dynamic: false
+    requires_restart: true
+  # Logging & Redo
+  - name: log_buffer
+    dynamic: false
+    requires_restart: true
+  - name: log_archive_dest_1
+    dynamic: true
+    requires_restart: false
+  # CDB/PDB (12c+)
+  - name: enable_pluggable_database
+    dynamic: false
+    requires_restart: true
+  - name: max_pdbs
+    dynamic: false
+    requires_restart: true
+  # Optimizer
+  - name: optimizer_mode
+    dynamic: true
+    requires_restart: false
+  - name: optimizer_adaptive_plans
+    dynamic: true
+    requires_restart: false
+

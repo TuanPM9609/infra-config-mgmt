@@ -1,0 +1,41 @@
+systems:
+  - system_id: erp
+    name: "ERP System"
+    db_type: oracle
+    version: "19c"
+    tier: critical
+    environments:
+      prod:
+        db:  { host: 100.64.5.21, port: 1521, service: stb01, credential_id: ora-prod-cred }
+        os:  { host: 100.64.5.21, user: root, credential_id: ora-prod-ssh }
+        os_type: linux
+      dev:
+        db:  { host: 100.64.5.22,  port: 1521, service: stb02, credential_id: ora-dev-cred  }
+        os:  { host: 100.64.5.22,  user: root, credential_id: ora-dev-ssh  }
+        os_type: linux
+      test:
+        db:  { host: ora-test-01, port: 1521, service: ERPTST, credential_id: ora-test-cred }
+        os:  { host: ora-test-01, user: oracle, credential_id: ora-test-ssh }
+        os_type: linux
+    baseline_db:   params/oracle/19c/erp_prod.yaml
+    baseline_os:   os_params/linux/oracle_server_prod.yaml
+    baseline_objects: object_inventory/erp_prod_objects.yaml
+
+  - system_id: crm
+    name: "CRM System"
+    db_type: mssql
+    version: "2019"
+    tier: standard
+    environments:
+      prod:
+        db:  { host: sql-prod-01, port: 1433, database: CRM_PROD, credential_id: sql-prod-cred }
+        os:  { host: sql-prod-01, user: sysadmin, credential_id: sql-prod-ssh }
+        os_type: windows
+      dev:
+        db:  { host: sql-dev-01, port: 1433, database: CRM_DEV, credential_id: sql-dev-cred }
+        os:  { host: sql-dev-01, user: sysadmin, credential_id: sql-dev-ssh }
+        os_type: windows
+    baseline_db:   params/mssql/2019/crm_prod.yaml
+    baseline_os:   os_params/windows/mssql_win_prod.yaml
+    baseline_objects: object_inventory/crm_prod_objects.yaml
+

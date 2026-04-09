@@ -1,0 +1,14 @@
+# version_matrix/oracle/11g.yaml
+db_type: oracle
+version: "11g"
+supported_params:
+  - { name: sga_target,           dynamic: true,  requires_restart: false }
+  - { name: pga_aggregate_target, dynamic: true,  requires_restart: false }
+  - { name: open_cursors,         dynamic: true,  requires_restart: false }
+  - { name: sessions,             dynamic: false, requires_restart: true  }
+  - { name: processes,            dynamic: false, requires_restart: true  }
+  - { name: log_buffer,           dynamic: false, requires_restart: true  }
+  - { name: log_archive_dest_1,   dynamic: true,  requires_restart: false }
+  - { name: optimizer_mode,       dynamic: true,  requires_restart: false }
+  # NOTE: KHÔNG có inmemory_size, enable_pluggable_database, max_pdbs
+

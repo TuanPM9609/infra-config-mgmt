@@ -1,0 +1,56 @@
+metadata:
+  system: erp
+  os_type: linux
+  updated_at: "2024-01-15"
+
+sysctl_params:
+  kernel.shmmax:
+    prod_value: 68719476736       # 64GB
+    sync_rule: scale_down
+    ratios: { dev: 0.25, test: 0.50 }
+  kernel.shmall:
+    prod_value: 16777216
+    sync_rule: scale_down
+    ratios: { dev: 0.25, test: 0.50 }
+  kernel.shmmni:
+    prod_value: 4096
+    sync_rule: copy
+  vm.swappiness:
+    prod_value: 10
+    sync_rule: copy
+  vm.dirty_ratio:
+    prod_value: 15
+    sync_rule: copy
+  net.core.rmem_max:
+    prod_value: 4194304
+    sync_rule: copy
+  vm.nr_hugepages:
+    prod_value: 16384
+    sync_rule: scale_down
+    ratios: { dev: 0.25, test: 0.50 }
+
+limits_conf:
+  oracle_nofile:
+    prod_value: 65536
+    sync_rule: copy
+    target_user: oracle
+    limit_type: nofile
+  oracle_nproc:
+    prod_value: 16384
+    sync_rule: copy
+    target_user: oracle
+    limit_type: nproc
+  oracle_stack:
+    prod_value: 10240
+    sync_rule: copy
+    target_user: oracle
+    limit_type: stack
+
+disk_scheduler:
+  sda:
+    prod_value: "deadline"
+    sync_rule: copy
+  sdb:
+    prod_value: "deadline"
+    sync_rule: copy
+
