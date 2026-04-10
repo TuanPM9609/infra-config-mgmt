@@ -6,22 +6,122 @@ metadata:
 
 objects:
   by_schema:
-    ERP_OWNER:
-      TABLE:      245
-      INDEX:      412
-      VIEW:        87
-      TRIGGER:     63
-      PROCEDURE:   95
-      FUNCTION:    41
-      PACKAGE:     38
-      SEQUENCE:   130
-      SYNONYM:     55
-      DB_LINK:      3
-    ERP_REPORT:
-      TABLE:       12
-      VIEW:        98
-      SYNONYM:     45
-
+  APPQOSSYS:
+    SYNONYM: 1
+    TABLE: 5
+  AUDSYS:
+    INDEX: 3
+    INDEX PARTITION: 30
+    LIBRARY: 1
+    LOB: 3
+    LOB PARTITION: 30
+    PACKAGE: 2
+    PACKAGE BODY: 2
+    TABLE: 1
+    TABLE PARTITION: 10
+    VIEW: 6
+  CTXSYS:
+    FUNCTION: 2
+    INDEX: 68
+    INDEXTYPE: 5
+    LIBRARY: 1
+    LOB: 4
+    OPERATOR: 6
+    PACKAGE: 78
+    PACKAGE BODY: 67
+    PROCEDURE: 2
+    SEQUENCE: 3
+    TABLE: 53
+    TYPE: 22
+    TYPE BODY: 6
+    VIEW: 81
+  DBSFWUSER:
+    INDEX: 3
+    PACKAGE: 1
+    PACKAGE BODY: 1
+    TABLE: 3
+  DVF:
+    FUNCTION: 20
+    PACKAGE: 1
+    PACKAGE BODY: 1
+  DVSYS:
+    FUNCTION: 33
+    INDEX: 78
+    LIBRARY: 5
+    LOB: 1
+    PACKAGE: 11
+    PACKAGE BODY: 11
+    PROCEDURE: 3
+    SEQUENCE: 22
+    SYNONYM: 2
+    TABLE: 44
+    TYPE: 75
+    VIEW: 120
+  GSMADMIN_INTERNAL:
+    EVALUATION CONTEXT: 1
+    FUNCTION: 1
+    INDEX: 52
+    LIBRARY: 4
+    LOB: 10
+    PACKAGE: 9
+    PACKAGE BODY: 9
+    PROCEDURE: 2
+    QUEUE: 2
+    RULE SET: 2
+    SEQUENCE: 16
+    SYNONYM: 2
+    TABLE: 42
+    TRIGGER: 5
+    TYPE: 45
+    TYPE BODY: 3
+    VIEW: 9
+  LBACSYS:
+    FUNCTION: 25
+    INDEX: 30
+    LIBRARY: 11
+    PACKAGE: 25
+    PACKAGE BODY: 24
+    PROCEDURE: 8
+    SEQUENCE: 3
+    SYNONYM: 2
+    TABLE: 22
+    TRIGGER: 3
+    TYPE: 9
+    TYPE BODY: 4
+    VIEW: 77
+  OJVMSYS:
+    INDEX: 7
+    JAVA DATA: 7
+    LOB: 1
+    SEQUENCE: 2
+    TABLE: 6
+  OLAPSYS:
+    INDEX: 2
+    SEQUENCE: 1
+    TABLE: 2
+    TYPE: 2
+    VIEW: 18
+  ORACLE_OCM:
+    JOB: 2
+    PACKAGE: 3
+    PACKAGE BODY: 3
+  ORDDATA:
+    INDEX: 138
+    LOB: 9
+    SEQUENCE: 13
+    TABLE: 90
+    VIEW: 25
+  ORDPLUGINS:
+    PACKAGE: 5
+    PACKAGE BODY: 5
+  PUBLIC:
+    LOCKDOWN PROFILE: 3
+    SYNONYM: 11798
+  REMOTE_SCHEDULER_AGENT:
+    FUNCTION: 1
+    PROCEDURE: 12
+  SI_INFORMTN_SCHEMA:
+    SYNONYM: 8
 diff_thresholds:
   alert_if_diff_gt: 0      # alert ngay nếu số lượng lệch bất kỳ
   critical_object_types:   # loại object này lệch → alert DBA ngay
